@@ -1,1 +1,57 @@
 @import "compass_twitter_bootstrap";
+
+// Variables
+// ------------------
+
+$red:         #FF7F66;
+$green:       #D9CC3C;
+$yellow:      #FFEB79;
+$blue:        #2185C5;
+$greenLight:  #A0E0A9;
+$blueLight:   #7ECEFD;
+$beige:       #FFF6E5;
+
+$primary:     $blue;
+$secondary:   $yellow;
+$tertiary:    $red;
+$light:       $beige;
+
+body {
+  background: $beige;
+}
+
+.hero-unit {
+    margin: 50px auto 0 auto;
+    width: 300px;
+}
+
+* {
+  @include box-sizing(border-box);
+}
+
+button {
+  background: $primary;
+  border: none;
+  color: lighten($primary, 60%);
+  font-size: 20px;
+  font-weight: bold;
+  height: 50px;
+  line-height: 50px;
+  cursor: pointer;
+  padding: 0;
+  &:hover {
+    background: lighten($primary, 2%);
+  }
+}
+
+.keypad {
+  width: 200px;
+  @include clearfix;
+  button {
+    width: 32%;
+    float: left;
+    margin: 1%;
+    &:nth-child(3n - 2) { margin-left: 0; }
+    &:nth-child(3n) { margin-right: 0; }
+  }
+}
