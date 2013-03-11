@@ -29,6 +29,10 @@ body {
   @include box-sizing(border-box);
 }
 
+.logo {
+  color: $red;
+}
+
 button {
   background: $primary;
   border: none;
@@ -44,14 +48,44 @@ button {
   }
 }
 
+$keypadWidth: 200px;
 .keypad {
-  width: 200px;
+  width: $keypadWidth;
   @include clearfix;
+  float: left;
   button {
     width: 32%;
     float: left;
     margin: 1%;
     &:nth-child(3n - 2) { margin-left: 0; }
     &:nth-child(3n) { margin-right: 0; }
+  }
+  &.operatorpad {
+    width: $keypadWidth / 3;
+    margin-left: 5px;
+    button {
+      margin: 3% 0;
+      width: 100%;
+    }
+
+  }
+}
+
+.output {
+  width: 100px;
+  float: left;
+  font-size: 20px;
+  font-family: $monoFontFamily;
+  span {
+    display: block;
+    text-align: right;
+    padding: 2px 0;
+    &.plus:before {
+      content: "+";
+      margin-right: 10px;
+    }
+    &:nth-child(2n) {
+      border-bottom: 1px solid $blue;
+    }
   }
 }
